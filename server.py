@@ -489,3 +489,5 @@ async def startup_db():
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+handler = Mangum(app)
