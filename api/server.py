@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
+from mangum import Mangum
 import os
 import logging
 from pathlib import Path
@@ -15,6 +16,7 @@ import jwt
 from passlib.context import CryptContext
 import base64
 import shutil
+
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
